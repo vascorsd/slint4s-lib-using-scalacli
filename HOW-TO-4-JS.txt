@@ -1,0 +1,97 @@
+## Preparing the javascript/node and show a window
+
+Required files to be in place:
+ - package.json - javascript ecosystem way to define dependencies.
+   + needs to have the slint-ui version defined to
+     be able to generate the scala.js bindings from the
+     typescript definitions it provides.
+     slint-ui is officially published on npm and since version
+     1.4.0 provides the native binaries already packaged.
+   + not exactly sure, but the other requirement is to have
+     typescript compiler defined for the scala code generator
+     to work properly
+
+ - index.js - the "main" of the node/js ecosystem.
+   This file is here just to make sure that in a pure javascript
+   only project/demo we can properly bring in the slint library
+   and see it working and showing a window.
+
+
+With these setup in place we should be able to make the demo run.
+Supposedly we can call something "node magic command" to make things
+work, but node and npm world is too much of a bonkers world that I don't
+want to spend time in going with it.
+
+So, install "deno" from the package manager or something and run the following:
+
+```
+deno run --node-modules-dir -A index.js
+```
+
+And node_modules should be now generated with things inside and a
+window that says slint should be shown.
+
+
+## Generate the scala.js wrappers
+
+ 1. installs stc (https://scalablytyped.org/docs/cli) which is the tool
+    that will read the javascript/typescript mess and generate scala code.
+
+ 2. run: `❯ ~/.local/share/coursier/bin/stc slint-ui` which should generate
+    code and put it in "out" folder.
+
+## Let's try to use scala-cli to build this
+ ...
+
+Copied the generated code inside the out folder about slint/ui into
+src/js.
+
+There's another folder in the out called std which I have a VERY
+HARD TIME understanding what it is about.
+
+Overall the documentation regarding all these things is very very
+lacking and assumes if you are messing with this things then you
+clearly know what most of the terms being talked about are related
+to, but if you are flying blind and messing in js/node ecosystem
+for the first time then it's all gibberish.
+
+Anyway.
+
+Added a using directive to the files copied into the src/js folder
+so that they only compile with when targetting scala.js.
+
+It fails to compile and seems to need to add dependency for scalablytyped runtime.
+There's no docs anywhere about this thing. Probably magic done by the sbt plugin??
+
+oh well.
+
+after adding that dep, it fails to compile because now wants the typings.std...
+so it is needed after all? what even is it??? damn i hate everything
+
+ok, generated again, changed the src/js folder to have different folders
+for each slint/ui and std.
+
+the runtime dep appears in the build.sbt file generated, that i have no idea if it's
+supposed to use or not..
+
+trying to compile again now there's errors about org.scala.dom,
+so I guess the other dep is also needed.
+
+also on the using dep, i was really convinved that I should be using ::: but
+it seems to fail and actually works with :: ??? what
+
+seems to be stuck now compiling everything...
+
+it actually COMPILED with scala-cli compile .
+
+!!
+
+
+...
+
+oh well forget it. it's all too hard.
+
+putting this on hold and go follow the already known path and use sbt
+and try with that.
+
+...

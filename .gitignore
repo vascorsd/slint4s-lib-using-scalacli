@@ -1,0 +1,9 @@
+.idea
+.metals
+.vscode
+.bloop
+.bsp
+.scala-build
+
+target
+node_modules

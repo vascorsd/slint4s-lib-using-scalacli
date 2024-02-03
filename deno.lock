@@ -1,0 +1,51 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "npm:slint-ui@1.4.0": "npm:slint-ui@1.4.0"
+    },
+    "npm": {
+      "@napi-rs/cli@2.18.0": {
+        "integrity": "sha512-lfSRT7cs3iC4L+kv9suGYQEezn5Nii7Kpu+THsYVI0tA1Vh59LH45p4QADaD7hvIkmOz79eEGtoKQ9nAkAPkzA==",
+        "dependencies": {}
+      },
+      "@slint-ui/slint-ui-binary-darwin-arm64@1.4.0": {
+        "integrity": "sha512-M73kirPl/z61MP6CVG3L2xkgi1JRYcS2B2XFQMbz5IdW/sQzzth/69nYBGvn5OWWjPkLL88ON2YhqR3aXryQ0g==",
+        "dependencies": {}
+      },
+      "@slint-ui/slint-ui-binary-darwin-x64@1.4.0": {
+        "integrity": "sha512-F1YTtZewbye3uLbih4cU5qehaFTd57CsOSRoNyYygyMeOPhC2F6vUI84jfVBnOAHCz5B4d76I6v2+dggOolipg==",
+        "dependencies": {}
+      },
+      "@slint-ui/slint-ui-binary-linux-x64-gnu@1.4.0": {
+        "integrity": "sha512-4Lr22DEwOkwKWyHUP36glrpaeSFn0hr4WsSaNeYyAePD3t01JCAoQamj96CpooyyFpATNlLjniGPxvM0s5HoiA==",
+        "dependencies": {}
+      },
+      "@slint-ui/slint-ui-binary-win32-ia32-msvc@1.4.0": {
+        "integrity": "sha512-3r1omWv+Ien8tGPkf70sUe7vRU5V/tRR8F+UNjwgJ8PV1H0GPvEc/Lb2JQOkVT4qMSeYjSAP77gC3B3MiTXYMw==",
+        "dependencies": {}
+      },
+      "@slint-ui/slint-ui-binary-win32-x64-msvc@1.4.0": {
+        "integrity": "sha512-6sWSprtbF6P8guHQazmcPySLjpMl4rofeUv11B6NncH/KGeA0hQiFOfZDlxOX67O6wHAfO1718mBHMH7M/Lijg==",
+        "dependencies": {}
+      },
+      "slint-ui@1.4.0": {
+        "integrity": "sha512-CcU2kFj61zxVlaDJ9BmQfbVAXjSjzHmiQEXoD+efqqs472zlgoTvQX1O8Sj1UEYFiZo3ehsQVVbXSwf/Bcdr9g==",
+        "dependencies": {
+          "@napi-rs/cli": "@napi-rs/cli@2.18.0",
+          "@slint-ui/slint-ui-binary-darwin-arm64": "@slint-ui/slint-ui-binary-darwin-arm64@1.4.0",
+          "@slint-ui/slint-ui-binary-darwin-x64": "@slint-ui/slint-ui-binary-darwin-x64@1.4.0",
+          "@slint-ui/slint-ui-binary-linux-x64-gnu": "@slint-ui/slint-ui-binary-linux-x64-gnu@1.4.0",
+          "@slint-ui/slint-ui-binary-win32-ia32-msvc": "@slint-ui/slint-ui-binary-win32-ia32-msvc@1.4.0",
+          "@slint-ui/slint-ui-binary-win32-x64-msvc": "@slint-ui/slint-ui-binary-win32-x64-msvc@1.4.0"
+        }
+      }
+    }
+  },
+  "remote": {},
+  "workspace": {
+    "dependencies": [
+      "npm:slint-ui@1.4.0"
+    ]
+  }
+}
